@@ -1,0 +1,21 @@
+import math
+a=3.0
+b=4.0
+e=0.001
+fa=a**2-(math.log(1+a**2))-9.75
+fb=b**2-(math.log(1+b**2))-9.75
+if (fa*fb)>=0:
+    print('koku yoxdur')
+else:
+    while (b-a)/2>e:
+        c=(a+b)/2
+        fc=c**2-(math.log(1+c**2))-9.75
+        if abs(c)<e:
+            break
+        elif fa*fc<0:
+            fb=fc
+            b=c
+        else:
+            fa=fc
+            a=c
+print((a+b)/2)    
